@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_two/models/movie.dart';
+import 'package:task_two/widgets/movie_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: Colors.blueAccent),
       ),
       home: const MovieLibrary(),
     );
@@ -26,7 +28,13 @@ class MovieLibrary extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      body: SizedBox(),
+      body: Center(
+        child: SizedBox(
+          child: MovieCard(
+            movie: movies[0]
+          ),
+        ),
+      ),
     );
   }
 }
