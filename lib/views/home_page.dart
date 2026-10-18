@@ -62,6 +62,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+        Padding(
+         padding: const EdgeInsets.symmetric(horizontal: 20),
+         child: Align(
+         alignment: Alignment.centerLeft,
+         child: Text(
+           '${filteredMovies.length} movies found',
+          ),
+         ),
+        ),
         SizedBox(
           height: 10,
         ),
@@ -77,7 +86,7 @@ class _HomePageState extends State<HomePage> {
             },
             itemCount: filteredMovies.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount:     MediaQuery.sizeOf(context).width >= 600 ? 4 : 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               childAspectRatio: ((MediaQuery.sizeOf(context).width - 34) / 2) / (MediaQuery.sizeOf(context).height * 0.38),

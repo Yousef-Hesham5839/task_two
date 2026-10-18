@@ -5,6 +5,15 @@ class MovieCard extends StatelessWidget {
   const MovieCard({super.key, required this.movie});
 
   final Movie movie;
+  Color getRatingColor(double rating) {
+   if (rating >= 8) {
+     return Colors.green;
+   } else if (rating >= 6) {
+     return Colors.orange;
+   } else {
+     return Colors.red;
+   }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +49,7 @@ class MovieCard extends StatelessWidget {
                     vertical: 4,
                   ),
                  decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: getRatingColor(movie.rating),
                   borderRadius: BorderRadius.circular(6),
                  ),
                  child: Text(
