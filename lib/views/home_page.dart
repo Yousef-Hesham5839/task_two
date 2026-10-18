@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final filteredMovies = movies.where((movie) {
-       return movie.title.toLowerCase().contains(query.toLowerCase());
-      },
-    ).toList();
+      return movie.title.toLowerCase().contains(query.toLowerCase()) ||
+      movie.genre.toLowerCase().contains(query.toLowerCase());
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -66,8 +66,10 @@ class _HomePageState extends State<HomePage> {
           height: 10,
         ),
         Expanded(
-          child: isGridView
-            ? GridView.builder(
+          child: filteredMovies.isEmpty? Center(
+            child: Text("No movies found"),
+           )
+           : isGridView ? GridView.builder(
             padding: const EdgeInsets.all(12),
             itemBuilder: (BuildContext context, int index)
             {
