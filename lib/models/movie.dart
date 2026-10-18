@@ -51,7 +51,7 @@ final List<Movie> movies = [
     genre: 'Action',
     year: 2026,
     rating: 0.0,
-    image: 'lib/assets/posters/avengers_doomsday.jpg',
+    image: 'lib/assets/posters/avengers_doomsday.png',
   ),
   const Movie(
     title: 'The Batman',
@@ -65,7 +65,7 @@ final List<Movie> movies = [
     genre: 'Sci-Fi',
     year: 1977,
     rating: 8.6,
-    image: 'lib/assets/posters/star_wars.jpg',
+    image: 'lib/assets/posters/star_wars.png',
   ),
   const Movie(
     title: 'Sherlock Holmes',
